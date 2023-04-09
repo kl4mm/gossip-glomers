@@ -35,6 +35,8 @@ pub enum Type {
     Error,
     Echo,
     EchoOk,
+    Generate,
+    GenerateOk,
 }
 
 type Handler = fn(Message) -> Result<(), NodeError>;
@@ -87,7 +89,7 @@ impl Node {
             let msg = match msg {
                 Ok(m) => m,
                 Err(e) => {
-                    unimplemented!("msg iter result error");
+                    panic!("{e}");
                 }
             };
 
