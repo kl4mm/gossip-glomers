@@ -37,6 +37,12 @@ pub enum Type {
     EchoOk,
     Generate,
     GenerateOk,
+    Broadcast,
+    BroadcastOk,
+    Read,
+    ReadOk,
+    Topology,
+    TopologyOk,
 }
 
 type Handler = fn(Message) -> Result<(), NodeError>;
